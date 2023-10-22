@@ -1,0 +1,19 @@
+{
+  "name": "sito",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/input.css -o ./css/style.css --minify",
+    "watch": "npx tailwindcss -i ./src/input.css -o ./css/style.css --watch --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  },
+  "dependencies": {
+    "@preline/overlay": "^1.4.0"
+  }
+}
