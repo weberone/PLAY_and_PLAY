@@ -473,7 +473,7 @@
   .close:focus {
     @apply text-play;
     text-decoration: none;
-    @apply cursor-pointer;
+    @apply cursor-pointer; 
   }
 
 
