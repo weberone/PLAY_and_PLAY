@@ -1,0 +1,489 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* ------------------------ FONT FACE */
+
+/* ------------------------ SUPPLY */
+
+@font-face {
+  font-family: 'pp_supply_monoregular';
+  src: url('../webfonts/ppsupplymono-regular-webfont.woff2') format('woff2'),
+    url('../webfonts/ppsupplymono-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal
+}
+.supply {
+  font-family: 'pp_supply_monoregular', sans-serif;
+  letter-spacing: 1px;
+}
+
+/* ------------------------ SUPPLY LIGHT */
+
+@font-face {
+  font-family: 'pp_supply_monoultralight';
+  src: url('../webfonts/ppsupplymono-ultralight-webfont.woff2') format('woff2'),
+    url('../webfonts/ppsupplymono-ultralight-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.supply_light {
+  font-family: 'pp_supply_monoultralight', sans-serif;
+  letter-spacing: 1px;
+}
+
+/* ------------------------ RIFTON */
+
+@font-face {
+  font-family: 'riftonregular';
+  src: url('../webfonts/rifton-regular-webfont.woff2') format('woff2'),
+    url('../webfonts/rifton-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.rifton {
+  font-family: 'riftonregular', sans-serif;
+  letter-spacing: 1px;
+}
+
+
+
+/* ------------------------ CUSTOM CLASS */
+
+@layer components {
+
+  /* ------------------------ LANDSCAPE MESSAGE */
+
+  .landscape {
+    @apply fixed;
+    @apply left-0;
+    @apply top-0;
+    @apply w-full;
+    @apply h-full;
+    @apply bg-navi-500;
+    @apply hidden;
+    @apply before:top-1/2;
+    @apply before:left-1/2;
+    @apply before:w-[248px];
+    @apply before:h-[95px];
+    @apply before:z-[4];
+    @apply before:mt-[-40px];
+    @apply before:ml-[-142px];
+    @apply before:content-[''];
+    @apply before:bg-[url('../img/logo_play.svg')];
+    @apply before:bg-contain;
+  }
+
+  .landscape p {
+    @apply absolute;
+    @apply top-[50%];
+    @apply w-full;
+    @apply text-center;
+    @apply p-10;
+    @apply text-[14px];
+    @apply leading-[16px];
+    @apply text-white;
+  }
+
+  @media (max-height: 480px) and (min-width: 480px) and (max-width: 600px) {
+    header, section, footer {
+      @apply hidden;
+    }
+    .landscape {
+      @apply block;
+    }
+  }
+
+  /* ------------------------ ANIMATION TOP BTN */
+
+  .top {
+    @apply fixed;
+    @apply right-[30px];
+    @apply bottom-[60px];
+    @apply rounded-full;
+    @apply bg-navi-500;
+    @apply text-center;
+    @apply text-white;
+    @apply z-20;
+    @apply block;
+    @apply h-[40px];
+    @apply w-[40px];
+    @apply cursor-pointer;
+    @apply text-[18px];
+    @apply leading-[48px];
+    @apply shadow-lg;
+    @apply transition-all;
+    @apply hover:transition-all;
+    @apply hover:bg-play;
+    @apply hover:text-black;
+  }
+
+  @media screen and (max-width: 767px) {
+    .top {
+      @apply hidden;
+    }
+  }
+
+  .top_no {
+    @apply hidden;
+  }
+
+  /* ------------------------ BUTTON DEFAULT */
+
+  .btn {
+    @apply bg-play;
+    @apply text-black;
+    @apply uppercase;
+    @apply supply;
+    @apply rounded-full;
+    @apply px-5;
+    @apply py-3;
+    @apply transition-all;
+    @apply hover:transition-all;
+    @apply hover:bg-giallo;
+    @apply hover:text-black;
+  }
+
+  .btn-small {
+    @apply py-0;
+  }
+
+  /* ------------------------ BUTTON SPECIAL */
+
+  .btn-special{
+    @apply bg-bianco02;
+    @apply px-5;
+    @apply py-3;
+    @apply border-b-2;
+    @apply border-play;
+    @apply supply;
+    @apply uppercase;
+    @apply text-white;
+    @apply backdrop-blur-xl;
+    @apply inline-block;
+    @apply hover:bg-bianco05;
+    @apply hover:transition-all;
+    @apply hover:text-giallo;
+  }
+
+  .btn-special.btn-play{
+    @apply border-play;
+  }
+
+  .btn-special.btn-watch{
+    @apply border-watch;
+  }
+
+  .btn-special.btn-collect{
+    @apply border-collect;
+  }
+
+  /* ------------------------ FORM ELEMENTS */
+
+  .label-style{
+    @apply block;
+    @apply mb-2;
+    @apply text-gray-900;
+    @apply text-left;
+  }
+
+  .input-style{
+    @apply text-left; 
+    @apply bg-gray-50;
+    @apply border;
+    @apply border-gray-300;
+    @apply text-gray-900;
+    @apply rounded-lg;
+    @apply focus:ring-play;
+    @apply focus:border-watch; 
+    @apply block;
+    @apply w-full;
+    @apply p-2.5;
+  }
+
+  .checkbox-style{
+    @apply w-4;
+    @apply h-4;
+    @apply border;
+    @apply border-gray-300;
+    @apply rounded;
+    @apply bg-gray-50; 
+    @apply focus:ring-play;
+    @apply focus:ring-watch;
+  }
+
+}
+
+
+  /* ------------------------ ANIMATION */
+
+  /* ------------------------ CONTRAST IMAGE ANIMATION */
+  .anicontrast {
+    animation-name: anicontrast;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes anicontrast {
+    0% {
+      filter: brightness(1);
+      filter: contrast(1);
+      -webkit-filter: brightness(1);
+      -webkit-filter: contrast(1);
+    }
+
+    50% {
+      filter: brightness(-0.4);
+      filter: contrast(1.2);
+      -webkit-filter: brightness(-0.4);
+      -webkit-filter: contrast(1.2);
+    }
+
+    100% {
+      filter: brightness(1);
+      filter: contrast(1);
+      -webkit-filter: brightness(1);
+      -webkit-filter: contrast(1);
+    }
+  }
+
+
+
+
+
+
+  strong {
+    font-family: 'pp_supply_monoregular', sans-serif;
+    letter-spacing: 1px;
+  }
+
+  a.link {
+    @apply underline;
+  }
+
+  /* ------------------------ H */
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-play;
+    @apply uppercase;
+    font-family: 'riftonregular', sans-serif;
+    letter-spacing: 1px;
+  }
+
+  h1 {
+    font-size: 48px;
+    line-height: 46px;
+  }
+
+  h2 {
+    font-size: 40px;
+    line-height: 38px;
+  }
+
+  h3 {
+    font-size: 32px;
+    line-height: 30px;
+  }
+
+  /* ------------------------ FIX MENU RESPONSIVE */
+
+  @media screen and (min-width: 1023px) {
+
+    #main_menu,
+    #lang_menu {
+      display: inline-block !important;
+    }
+  }
+
+  /* ------------------------ HEADER */
+
+  body.page_int {
+    @apply pt-[100px];
+  }
+
+  .scrolled header,
+  .page_int header {
+    background: #343248;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+  }
+
+  .scrolled .o-grid__item {
+    padding: 0px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 20;
+  }
+
+  @media screen and (max-width: 767px) {
+    .scrolled .o-grid__item {
+      display: block;
+    }
+  }
+
+  .scrolled .o-grid__item button {
+    background: transparent !important;
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+  }
+
+  .scrolled .o-grid__item button:hover {
+    background: transparent !important;
+  }
+
+  @media screen and (max-width: 640px) {
+    .scrolled .o-grid__item {
+      padding: 24px 10px;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .scrolled .o-grid__item {
+      padding: 24px 0px;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .scrolled .o-grid__item {
+      padding: 8px 0px;
+    }
+  }
+
+  /* ------------------------ BURGER MENU ANIMATION */
+
+
+  .c-burger span::before {
+    top: -10px;
+
+    @media screen and (max-width: 450px) {
+      top: -10px;
+    }
+  }
+
+  .c-burger span::after {
+    bottom: -10px;
+
+    @media screen and (max-width: 450px) {
+      bottom: -10px;
+    }
+  }
+
+  .c-burger--htx span::before,
+  .c-burger--htx span::after {
+    -webkit-transition-duration: 0.3s, 0.3s;
+    transition-duration: 0.3s, 0.3s;
+    -webkit-transition-delay: 0.3s, 0s;
+    transition-delay: 0.3s, 0s;
+  }
+
+  .c-burger--htx span::before {
+    -webkit-transition-property: top, -webkit-transform;
+    transition-property: top, transform;
+  }
+
+  .c-burger--htx span::after {
+    -webkit-transition-property: bottom, -webkit-transform;
+    transition-property: bottom, transform;
+  }
+
+
+  .c-burger--htx.is-active span {
+    background: none;
+  }
+
+  .c-burger--htx.is-active span::before {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .c-burger--htx.is-active span::after {
+    bottom: 0;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  .c-burger--htx.is-active span::before,
+  .c-burger--htx.is-active span::after {
+    -webkit-transition-delay: 0s, 0.3s;
+    transition-delay: 0s, 0.3s;
+  }
+
+
+
+  /* ------------------------ MODALS */
+
+  .modal {
+    @apply fixed;
+    @apply z-[100];
+    @apply left-0;
+    @apply top-0;
+    @apply w-full;
+    @apply h-full;
+    @apply overflow-hidden;
+    @apply bg-bianco05;
+    @apply backdrop-blur-xl;
+    @apply hidden;
+    @apply justify-center;
+    @apply items-center;
+    animation-name: modal;
+    animation-duration: 0.4s;
+  }
+
+  .modal-content {
+    @apply text-black;
+    @apply bg-white;
+    @apply border;
+    @apply border-gray-400;
+    @apply rounded-xl;
+    @apply w-1/3;
+    @apply max-h-[80%];
+    @apply p-10;
+    @apply my-10;
+    @apply shadow-lg;
+    @apply overflow-y-scroll;
+    margin: 0 auto;
+    animation-name: modal;
+    animation-duration: 0.4s;
+  }
+
+  .close {
+    @apply text-black;
+    @apply float-right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    @apply text-play;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+  @keyframes modal {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
