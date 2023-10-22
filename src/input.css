@@ -465,7 +465,7 @@
   .close {
     @apply text-black;
     @apply float-right;
-    font-size: 28px;
+    font-size: 28px; 
     font-weight: bold;
   }
 
@@ -473,7 +473,7 @@
   .close:focus {
     @apply text-play;
     text-decoration: none;
-    cursor: pointer;
+    @apply cursor-pointer;
   }
 
 
